@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+      If you are serving your web app in a path other than the root, change the
+      href value below to reflect the base path you are serving from.
+
+      The path provided below has to start and end with a slash "/" in order for
+      it to work correctly.
+
+      For more details:
+      * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+    -->
+    <base href="/">
+
+    <meta charset="UTF-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="Headspace Care | On-demand mental Healthcare">
+
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Headspace Care Coaching Scheduler">
+    <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+    <title>Headspace Care | On-demand mental Healthcare</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="favicon.png">
+
+    <script>
+        // The value below is injected by flutter build, do not touch.
+        var serviceWorkerVersion = null;
+    </script>
+
+    <!-- This script adds the flutter initialization JS code -->
+    <script src="flutter.js" defer></script>
+</head>
+<body >
+
+<div id="loading">
+    <style>
+      html, body {
+        inset: 0; overflow: hidden;
+        margin: 0; padding: 0;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+      }
+      #loading {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        width: 100%;
+      }
+      #loading img {
+        display: block;
+        margin: auto;
+      }
+      #loading.main_done img {
+        opacity: 1;
+      }
+      #loading.init_done img {
+        opacity: .05;
+      }
+      </style>
+    <img src="icons/headspace-logo.svg" alt="Loading indicator..." width="240" height="240"/>
+</div>
+
+<script src="assets/packages/libphonenumber_plugin/js/libphonenumber.js"></script>
+<script src="assets/packages/libphonenumber_plugin/js/stringbuffer.js"></script>
+
+<!-- Firebase Configuration -->
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-remote-config.js"></script>
+<script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyAb7ENgeESvZo-5Ba6xwaBTpLCeY9qdqds",
+        authDomain: "ginger-io-api-project-893165512381.firebaseapp.com",
+        databaseURL: "https://ginger-io-api-project-893165512381.firebaseio.com",
+        projectId: "ginger.io:api-project-893165512381",
+        storageBucket: "undefined",
+        messagingSenderId: "893165512381",
+        appId: "1:893165512381:web:eb35b172eb5600e748b9d4"
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+
+</script>
+<!-- Amplitude Script -->
+<script type="text/javascript" defer>
+   (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
+    ;r.type="text/javascript"
+    ;r.integrity="sha384-UcvEbHmT0LE2ZB30Y3FmY3Nfw6puAKXz/LpCFuoywywYikMOr/519Uu1yNq2nL9w"
+    ;r.crossOrigin="anonymous";r.async=true
+    ;r.src="https://cdn.amplitude.com/libs/amplitude-8.12.0-min.gz.js"
+    ;r.onload=function(){if(!e.amplitude.runQueuedFunctions){
+    console.log("[Amplitude] Error: could not load SDK")}}
+    ;var s=t.getElementsByTagName("script")[0];s.parentNode.insertBefore(r,s)
+    ;function i(e,t){e.prototype[t]=function(){
+    this._q.push([t].concat(Array.prototype.slice.call(arguments,0)));return this}}
+    var o=function(){this._q=[];return this}
+    ;var a=["add","append","clearAll","prepend","set","setOnce","unset","preInsert","postInsert","remove"]
+    ;for(var c=0;c<a.length;c++){i(o,a[c])}n.Identify=o;var u=function(){this._q=[]
+    ;return this}
+    ;var l=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"]
+    ;for(var p=0;p<l.length;p++){i(u,l[p])}n.Revenue=u
+    ;var d=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId","enableTracking","setGlobalUserProperties","identify","clearUserProperties","setGroup","logRevenueV2","regenerateDeviceId","groupIdentify","onInit","logEventWithTimestamp","logEventWithGroups","setSessionId","resetSessionId","getDeviceId","getUserId","setMinTimeBetweenSessionsMillis","setEventUploadThreshold","setUseDynamicConfig","setServerZone","setServerUrl","sendEvents","setLibrary","setTransport"]
+    ;function v(e){function t(t){e[t]=function(){
+    e._q.push([t].concat(Array.prototype.slice.call(arguments,0)))}}
+    for(var n=0;n<d.length;n++){t(d[n])}}v(n);n.getInstance=function(e){
+    e=(!e||e.length===0?"$default_instance":e).toLowerCase()
+    ;if(!Object.prototype.hasOwnProperty.call(n._iq,e)){n._iq[e]={_q:[]};v(n._iq[e])
+    }return n._iq[e]};e.amplitude=n})(window,document);
+</script>
+
+<script>
+    window.addEventListener('load', function(ev) {
+      var loading = document.querySelector('#loading');
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        }
+      }).then(function(engineInitializer) {
+        loading.classList.add('main_done');
+        return engineInitializer.initializeEngine();
+      }).then(function(appRunner) {
+        loading.classList.add('init_done');
+        return appRunner.runApp();
+      }).then(function(app) {
+        // Wait a few milliseconds so users can see the "zoom" animation
+        // before getting rid of the "loading" div.
+        window.setTimeout(function() {
+            if (loading) {
+              loading.remove();
+            }
+        }, 200);
+      });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+console.log("Initializing Firebase Messaging Service Worker");

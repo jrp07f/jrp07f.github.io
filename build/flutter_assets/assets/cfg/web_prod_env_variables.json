@@ -1,0 +1,9 @@
+{
+  "ginger_host": "data.ginger.io",
+  "listener_host": "www.listenernow.com",
+  "logger_host": "webhook.logentries.com",
+  "headspace_auth_host": "api.prod.headspace.com",
+  "amplitude_key": "14bfbe9880b485dbe8e27592d7cbfa9a",
+  "logger_key": "826a5c06-bc1c-4907-ba12-edab08d8fd1c",
+  "stripe_key": "pk_live_RHfBqqh4tMyU3DAJHiK1Aebq"
+}
